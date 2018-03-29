@@ -1,7 +1,7 @@
 # Личный проект «Угадай мелодию» [![Build status][travis-image]][travis-url]
 
 * Студент: [Эльмира Ибрагимова](https://up.htmlacademy.ru/ecmascript/4/user/184656).
-* Наставник: `Неизвестно`.
+* Наставник: [Константин Мамаев](https://htmlacademy.ru/profile/meison).
 
 ---
 
