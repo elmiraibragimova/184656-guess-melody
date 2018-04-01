@@ -31,7 +31,7 @@
 <template id="templates">
 
   <!-- Приветствие -->
-  <section class="main main--welcome">
+  <section class="main main--welcome" data-order="0">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
     <button class="main-play">Начать игру</button>
     <h2 class="title main-title">Правила игры</h2>
@@ -43,7 +43,7 @@
   </section>
 
   <!-- Игра на выбор жанра -->
-  <section class="main main--level main--level-genre">
+  <section class="main main--level main--level-genre" data-order="2">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
         cx="390" cy="390" r="370"
@@ -127,7 +127,7 @@
   </section>
 
   <!-- Игра на выбор исполнителя -->
-  <section class="main main--level main--level-artist">
+  <section class="main main--level main--level-artist" data-order="1">
     <svg xmlns="http://www.w3.org/2000/svg" class="timer" viewBox="0 0 780 780">
       <circle
         cx="390" cy="390" r="370"
@@ -188,7 +188,7 @@
   </section>
 
   <!-- Результат игры: выигрыш -->
-  <section class="main main--result">
+  <section class="main main--result" data-order="3">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 
     <h2 class="title">Вы настоящий меломан!</h2>
@@ -200,7 +200,7 @@
   </section>
 
   <!-- Результат игры: проигрыш время вышло -->
-  <section class="main main--result">
+  <section class="main main--result" data-order="4">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 
     <h2 class="title">Увы и ах!</h2>
@@ -209,7 +209,7 @@
   </section>
 
   <!-- Результат игры: проигрыш закончились попытки -->
-  <section class="main main--result">
+  <section class="main main--result" data-order="5">
     <section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 
     <h2 class="title">Какая жалость!</h2>

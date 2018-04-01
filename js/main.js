@@ -1,5 +1,11 @@
 const template = document.querySelector(`#templates`);
-const gameScreens = template.content.querySelectorAll(`.main`);
+const gameScreens = [...template.content.querySelectorAll(`.main`)];
+gameScreens.sort((screenA, screenB) => {
+  const a = parseInt(screenA.dataset.order, 10);
+  const b = parseInt(screenB.dataset.order, 10);
+  return a - b;
+});
+
 const appScreen = document.querySelector(`.app .main`);
 let currentScreenIndex = 0;
 
