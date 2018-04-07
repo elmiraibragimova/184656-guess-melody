@@ -14,6 +14,10 @@ const updateScreen = (currentScreen) => {
   const appScreen = document.querySelector(`.app .main`);
   appScreen.innerHTML = ``;
   appScreen.appendChild(currentScreen);
+
+  if (currentScreen.initScreen) {
+    currentScreen.initScreen();
+  }
 };
 
 export {getRandomValue, makeDOMElement, updateScreen};

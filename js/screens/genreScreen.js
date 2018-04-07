@@ -99,9 +99,14 @@ const submitButton = genreScreen.querySelector(`.genre-answer-send`);
 const answers = [...genreScreen.querySelectorAll(`input[type="checkbox"]`)];
 const resultScreen = resultScreens[getRandomValue(resultScreens.length)];
 
-submitButton.disabled = true;
-submitButton.addEventListener(`click`, () => updateScreen(resultScreen));
+genreScreen.initScreen = () => {
+  submitButton.disabled = true;
+  answers.forEach((answer) => {
+    answer.checked = false;
+  });
+};
 
+submitButton.addEventListener(`click`, () => updateScreen(resultScreen));
 answers.forEach((answer) => {
   answer.addEventListener(`change`, () => {
     let isChecked = answers.some((a) => a.checked);
