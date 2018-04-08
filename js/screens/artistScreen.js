@@ -64,11 +64,13 @@ const artistScreen = makeDOMElement(`
   </section>
 `);
 
-const answers = artistScreen.querySelectorAll(`.main-answer`);
+const answers = artistScreen.querySelector(`.main-list`);
 
-answers.forEach((answer) => {
-  answer.addEventListener(`click`, () => updateScreen(genreScreen));
+answers.addEventListener(`click`, function (event) {
+  const isRadioButton = event.target.classList.contains(`main-answer-r`);
+  if (isRadioButton) {
+    updateScreen(genreScreen);
+  }
 });
-
 
 export default artistScreen;
