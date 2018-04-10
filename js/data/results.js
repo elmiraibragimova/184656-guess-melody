@@ -1,3 +1,5 @@
+import {humanityCount} from './../utils/misc.js';
+
 const MESSAGE_TIME_OUT = `Время вышло! Вы не успели отгадать все мелодии`;
 const MESSAGE_NOTES_END = `У вас закончились все попытки. Ничего, повезёт в следующий раз!`;
 
@@ -24,7 +26,8 @@ const getPoints = (answers, leftNotes) => {
 };
 
 const getFormattedWinMessage = (place, players, percents) => {
-  return `Вы заняли ${place} место из ${players} игроков. Это лучше, чем у ${Math.trunc(percents)}% игроков`;
+  const playersCountLabel = humanityCount(players, `игрока`, `игроков`, `игроков`);
+  return `Вы заняли ${place} место из ${players} ${playersCountLabel}. Это лучше, чем у ${Math.trunc(percents)}% игроков`;
 };
 
 const getResults = (allPlayers, player) => {

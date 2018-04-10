@@ -20,4 +20,18 @@ const updateScreen = (currentScreen) => {
   }
 };
 
-export {getRandomValue, makeDOMElement, updateScreen};
+const humanityCount = (count, one, two, many) => {
+  const check = (num) => (count === num || (count > 20 && count.toString().endsWith(num)));
+
+  if (check(1)) {
+    return one;
+  }
+
+  if (check(2) || check(3) || check(4)) {
+    return two;
+  }
+
+  return many;
+};
+
+export {getRandomValue, makeDOMElement, updateScreen, humanityCount};
