@@ -21,7 +21,7 @@ const updateScreen = (currentScreen) => {
 };
 
 const humanityCount = (count, one, two, many) => {
-  const check = (num) => (count === num || (count > 20 && count.toString().endsWith(num)));
+  const check = (num) => count === num || (count > 20 && count.toString().endsWith(num));
 
   if (check(1)) {
     return one;

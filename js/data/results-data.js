@@ -47,31 +47,31 @@ export const answersAll = [
     "correct": false
   },
   {
-    "time": 40,
+    "time": 35,
     "correct": true
   },
   {
-    "time": 60,
+    "time": 33,
     "correct": false
   },
   {
-    "time": 80,
+    "time": 32,
     "correct": true
   },
   {
-    "time": 70,
+    "time": 31,
     "correct": true
   },
   {
-    "time": 125,
+    "time": 35,
     "correct": true
   },
   {
-    "time": 127,
+    "time": 32,
     "correct": true
   },
   {
-    "time": 139,
+    "time": 30,
     "correct": true
   },
   {
@@ -90,31 +90,31 @@ export const answersAllRight = [
     "correct": true
   },
   {
-    "time": 40,
+    "time": 30,
     "correct": true
   },
   {
-    "time": 60,
+    "time": 32,
     "correct": true
   },
   {
-    "time": 80,
+    "time": 30,
     "correct": true
   },
   {
-    "time": 70,
+    "time": 30,
     "correct": true
   },
   {
-    "time": 125,
+    "time": 45,
     "correct": true
   },
   {
-    "time": 127,
+    "time": 37,
     "correct": true
   },
   {
-    "time": 139,
+    "time": 39,
     "correct": true
   },
   {
@@ -162,6 +162,307 @@ export const answersAllRightTimeLessThan30 = [
   },
   {
     "time": 17,
+    "correct": true
+  }
+];
+
+export const pointsTest1 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 23,
+    "correct": true
+  },
+  {
+    "time": 27,
+    "correct": true
+  },
+  {
+    "time": 19,
+    "correct": true
+  },
+  {
+    "time": 17,
+    "correct": false
+  }
+];
+
+export const pointsTest2 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 23,
+    "correct": true
+  },
+  {
+    "time": 27,
+    "correct": true
+  },
+  {
+    "time": 19,
+    "correct": false
+  },
+  {
+    "time": 17,
+    "correct": false
+  }
+];
+
+export const pointsTest3 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 23,
+    "correct": true
+  },
+  {
+    "time": 27,
+    "correct": true
+  },
+  {
+    "time": 19,
+    "correct": true
+  },
+  {
+    "time": 37,
+    "correct": true
+  }
+];
+
+export const pointsTest4 = [
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 39,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  },
+  {
+    "time": 30,
+    "correct": true
+  }
+];
+
+export const pointsTest5 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 23,
+    "correct": true
+  },
+  {
+    "time": 27,
+    "correct": true
+  },
+  {
+    "time": 67,
+    "correct": true
+  },
+  {
+    "time": 37,
+    "correct": true
+  }
+];
+
+export const pointsTest6 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 23,
+    "correct": true
+  },
+  {
+    "time": 35,
+    "correct": true
+  },
+  {
+    "time": 67,
+    "correct": true
+  },
+  {
+    "time": 37,
+    "correct": true
+  }
+];
+
+export const pointsTest7 = [
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 10,
+    "correct": true
+  },
+  {
+    "time": 29,
+    "correct": true
+  },
+  {
+    "time": 25,
+    "correct": true
+  },
+  {
+    "time": 20,
+    "correct": true
+  },
+  {
+    "time": 24,
+    "correct": true
+  },
+  {
+    "time": 33,
+    "correct": true
+  },
+  {
+    "time": 47,
+    "correct": true
+  },
+  {
+    "time": 50,
+    "correct": true
+  },
+  {
+    "time": 37,
     "correct": true
   }
 ];
