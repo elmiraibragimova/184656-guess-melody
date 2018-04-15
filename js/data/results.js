@@ -2,9 +2,17 @@ import {humanityCount} from './../utils/misc.js';
 
 const MESSAGE_TIME_OUT = `Время вышло! Вы не успели отгадать все мелодии`;
 const MESSAGE_NOTES_END = `У вас закончились все попытки. Ничего, повезёт в следующий раз!`;
+const MAX_NUMBER_OF_QUESTIONS = 10;
+const MAX_NUMBER_OF_NOTES = 3;
+
+const Points = {
+  FAST_RIGHT_ANSWER: 2,
+  RIGHT_ANSWER: 1,
+  WRONG_ANSWER: 2
+};
 
 const getPoints = (answers, leftNotes) => {
-  if (answers.length < 10) {
+  if (answers.length < MAX_NUMBER_OF_QUESTIONS) {
     return -1;
   }
 
@@ -13,14 +21,14 @@ const getPoints = (answers, leftNotes) => {
   answers.forEach((answer) => {
     if (answer.correct) {
       if (answer.time < 30) {
-        points += 2;
+        points += Points.FAST_RIGHT_ANSWER;
       } else {
-        points += 1;
+        points += Points.RIGHT_ANSWER;
       }
     }
   });
 
-  points = points - (3 - leftNotes) * 2;
+  points = points - (MAX_NUMBER_OF_NOTES - leftNotes) * Points.WRONG_ANSWER;
 
   return points;
 };
