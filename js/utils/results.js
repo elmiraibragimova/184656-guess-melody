@@ -1,4 +1,5 @@
-import {humanityCount} from './../utils/misc.js';
+import {humanityCount} from '../utils/misc.js';
+import {DEFAULT_TIME_LEFT, FAST_ANSWER_TIME} from '../constants.js';
 
 const MESSAGE_TIME_OUT = `Время вышло! Вы не успели отгадать все мелодии`;
 const MESSAGE_NOTES_END = `У вас закончились все попытки. Ничего, повезёт в следующий раз!`;
@@ -33,27 +34,48 @@ const getPoints = (answers, leftNotes) => {
   return points;
 };
 
+const getFastAnswersCount = (answers) => {
+  return answers.filter((answer) => answer.time < FAST_ANSWER_TIME).length;
+};
+
+const getFormattedTime = (timeLeft) => {
+  const time = DEFAULT_TIME_LEFT - timeLeft;
+  const minutes = parseInt(time / 60, 10);
+  const seconds = parseInt(time % 60, 10);
+  return `${minutes} ${humanityCount(minutes, `минуту`, `минуты`, `минут`)} и ${seconds} ${humanityCount(seconds, `секунду`, `секунды`, `секунд`)}`;
+};
+
 const getFormattedWinMessage = (place, players, percents) => {
   const playersCountLabel = humanityCount(players, `игрока`, `игроков`, `игроков`);
   return `Вы заняли ${place} место из ${players} ${playersCountLabel}. Это лучше, чем у ${Math.trunc(percents)}% игроков`;
 };
 
-const getResults = (allPlayers, player) => {
-  if (player.time === 0) {
+const savePlayer = (data) => {
+  let player = {
+    points: getPoints(data.answers, data.status.notesLeft),
+    time: DEFAULT_TIME_LEFT - data.status.timeLeft,
+  };
+  data.allPlayers.push(player);
+  data.player = player;
+  return player;
+};
+
+
+const getResults = (data) => {
+  if (data.status.timeLeft === 0) {
     return MESSAGE_TIME_OUT;
   }
 
-  if (player.notes === 0) {
+  if (data.status.notesLeft === 0) {
     return MESSAGE_NOTES_END;
   }
 
-  allPlayers.push(player.points);
-  const sortedPlayers = allPlayers.sort((firstPlayer, secondPlayer) => secondPlayer - firstPlayer);
-  const place = sortedPlayers.indexOf(player.points);
-  const allPlayersCount = allPlayers.length;
+  const sortedPlayers = data.allPlayers.sort((firstPlayer, secondPlayer) => secondPlayer.points - firstPlayer.points);
+  const place = sortedPlayers.map((p) => p.points).indexOf(data.player.points);
+  const allPlayersCount = data.allPlayers.length;
   const lessSuccessPlayersPercents = ((allPlayersCount - place) / allPlayersCount) * 100;
 
-  return getFormattedWinMessage(place + 1, allPlayers.length, lessSuccessPlayersPercents);
+  return getFormattedWinMessage(place + 1, data.allPlayers.length, lessSuccessPlayersPercents);
 };
 
-export {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END, MAX_NUMBER_OF_NOTES};
+export {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END, MAX_NUMBER_OF_NOTES, getFastAnswersCount, getFormattedTime, savePlayer};

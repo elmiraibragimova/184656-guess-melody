@@ -3,7 +3,7 @@ import questionTemplate from './question';
 
 export default (data) => {
   let question = data.questions[data.status.currentQuestion];
-  let now = parseInt(new Date(), 10);
+  let now = +new Date();
   const html = makeDOMElement(`
     <section class="main main--level main--level-artist" data-order="1">
       <div class="main-wrap">

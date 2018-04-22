@@ -4,7 +4,7 @@ import questionTemplate from './question';
 
 export default (data) => {
   let question = data.questions[data.status.currentQuestion];
-  let now = parseInt(new Date(), 10);
+  let now = +new Date();
   const html = makeDOMElement(`
     <section class="main main--level main--level-genre" data-order="2">
       <div class="main-wrap">
@@ -36,7 +36,6 @@ export default (data) => {
   const submitButton = html.querySelector(`.genre-answer-send`);
   const answers = [...html.querySelectorAll(`input[type="checkbox"]`)];
 
-  // изменится ли доступ к переменной initScreen?
   html.initScreen = () => {
     submitButton.disabled = true;
     answers.forEach((answer) => {

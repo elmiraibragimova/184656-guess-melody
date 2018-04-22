@@ -30,7 +30,6 @@ const renderStatus = (data) => {
   statusContainer.innerHTML = status(data);
 };
 
-
 const humanityCount = (count, one, two, many) => {
   const check = (num) => count === num || (count > 20 && count.toString().endsWith(num));
 
@@ -45,11 +44,9 @@ const humanityCount = (count, one, two, many) => {
   return many;
 };
 
-
 const shuffle = (arr) => {
   return [...arr].sort(() => Math.random() - Math.random());
 };
-
 
 const createRandomQuestion = () => {
   const type = Math.random() > 0.5 ? QuestionTypes.GENRE : QuestionTypes.ARTIST;
@@ -103,7 +100,6 @@ const createRandomQuestion = () => {
   }
 };
 
-
 const answerQuestion = (answers, timeStarted, data) => {
   let question = data.questions[data.status.currentQuestion];
   data.status.currentQuestion += 1;
@@ -119,11 +115,15 @@ const answerQuestion = (answers, timeStarted, data) => {
   if (!correct) {
     data.status.notesLeft -= 1;
   }
+  let now = +new Date();
   data.answers.push({
-    time: parseInt((parseInt(new Date(), 10) - timeStarted) / 1000, 10),
+    time: parseInt((now - timeStarted) / 1000, 10),
     correct
   });
-}
+  if ((data.status.notesLeft === 0) || (data.answers.length === data.questions.length)) {
+    data.status.started = false;
+  }
+};
 
 
 export {getRandomValue, makeDOMElement, updateScreen, humanityCount, renderStatus, createRandomQuestion, answerQuestion};
