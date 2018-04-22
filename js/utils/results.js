@@ -56,4 +56,4 @@ const getResults = (allPlayers, player) => {
   return getFormattedWinMessage(place + 1, allPlayers.length, lessSuccessPlayersPercents);
 };
 
-export {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END};
+export {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END, MAX_NUMBER_OF_NOTES};
