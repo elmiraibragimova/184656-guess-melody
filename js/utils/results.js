@@ -1,8 +1,6 @@
 import {humanityCount} from '../utils/misc.js';
 import {DEFAULT_TIME_LEFT, FAST_ANSWER_TIME} from '../constants.js';
 
-const MESSAGE_TIME_OUT = `Время вышло! Вы не успели отгадать все мелодии`;
-const MESSAGE_NOTES_END = `У вас закончились все попытки. Ничего, повезёт в следующий раз!`;
 const MAX_NUMBER_OF_QUESTIONS = 10;
 const MAX_NUMBER_OF_NOTES = 3;
 
@@ -62,14 +60,6 @@ const savePlayer = (data) => {
 
 
 const getResults = (data) => {
-  if (data.status.timeLeft === 0) {
-    return MESSAGE_TIME_OUT;
-  }
-
-  if (data.status.notesLeft === 0) {
-    return MESSAGE_NOTES_END;
-  }
-
   const sortedPlayers = data.allPlayers.sort((firstPlayer, secondPlayer) => secondPlayer.points - firstPlayer.points);
   const place = sortedPlayers.map((p) => p.points).indexOf(data.player.points);
   const allPlayersCount = data.allPlayers.length;
@@ -78,4 +68,4 @@ const getResults = (data) => {
   return getFormattedWinMessage(place + 1, data.allPlayers.length, lessSuccessPlayersPercents);
 };
 
-export {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END, MAX_NUMBER_OF_NOTES, getFastAnswersCount, getFormattedTime, savePlayer};
+export {getResults, getPoints, getFormattedWinMessage, MAX_NUMBER_OF_NOTES, getFastAnswersCount, getFormattedTime, savePlayer};
