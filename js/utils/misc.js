@@ -71,6 +71,10 @@ const createRandomQuestion = () => {
         {
           url: shuffledSongs[2].src,
           correct: false
+        },
+        {
+          url: shuffledSongs[3].src,
+          correct: false
         }
       ])
     };

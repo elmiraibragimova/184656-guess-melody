@@ -6,7 +6,7 @@ export default (data) => {
   let question = data.questions[data.status.currentQuestion];
   let now = parseInt(new Date(), 10);
   const html = makeDOMElement(`
-    <section class="main main--level main--level-artist" data-order="1">
+    <section class="main main--level main--level-genre" data-order="2">
       <div class="main-wrap">
         <h2 class="title">Выберите ${question.genre} треки</h2>
         <form class="genre">
@@ -25,7 +25,7 @@ export default (data) => {
               <input type="checkbox" name="answer" value="${index}" id="a-${index}">
               <label class="genre-answer-check" for="a-${index}"></label>
             </div>
-          `))}
+          `)).join(`\n`)}
 
           <button class="genre-answer-send" type="submit">Ответить</button>
         </form>
