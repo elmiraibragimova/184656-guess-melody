@@ -1,5 +1,5 @@
 import {assert} from 'chai';
-import {getResults, getPoints, getFormattedWinMessage, MESSAGE_TIME_OUT, MESSAGE_NOTES_END} from './results.js';
+import {getResults, getPoints, getFormattedWinMessage} from './results.js';
 import * as data from './results-data.js';
 
 describe(`Points`, () => {
@@ -46,15 +46,10 @@ describe(`Points`, () => {
 });
 
 describe(`Results`, () => {
+  let testData = {
+    allPlayers: data.allPlayers,
+  };
   it(`should return message with results`, () => {
-    assert.equal(getResults(data.allPlayers, data.player1), getFormattedWinMessage(3, 9, 77));
-  });
-
-  it(`should return message that time is up`, () => {
-    assert.equal(getResults(data.allPlayers, data.player2), MESSAGE_TIME_OUT);
-  });
-
-  it(`should return message that there are no lifes left`, () => {
-    assert.equal(getResults(data.allPlayers, data.player3), MESSAGE_NOTES_END);
+    assert.equal(getResults(Object.assign({}, testData, {player: data.player1})), getFormattedWinMessage(1, 3, 100));
   });
 });

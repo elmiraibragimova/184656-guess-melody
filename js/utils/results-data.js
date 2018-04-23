@@ -467,8 +467,6 @@ export const pointsTest7 = [
   }
 ];
 
-export const allPlayers = [2, 6, 8, 9, 10, 12, 20, 20];
-
 export const player1 = {
   points: 14,
   notes: 2,
@@ -486,3 +484,5 @@ export const player3 = {
   notes: 0,
   time: 120
 };
+
+export const allPlayers = [player1, player2, player3];
